@@ -1,0 +1,5 @@
+<p>{{userData | json}}</p>
+<ul *ngFor="let item of userData | keyvalue">
+    <li>Object Key:{{item.key}} and Object Value:{{item.value}}</li>
+    <ul><li>{{item | json }}</li></ul>
+</ul>

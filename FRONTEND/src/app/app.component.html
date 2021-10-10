@@ -1,0 +1,13 @@
+
+<div class="header">
+  <app-tetiere></app-tetiere>
+</div>
+<app-show-product></app-show-product>
+<hr>
+<app-test-form (messageEvent)=receiveMessage($event)></app-test-form>
+<hr>
+<app-recap-form [userData]='message'></app-recap-form>
+<hr>
+<footer>
+  <app-footer></app-footer>
+</footer>

@@ -1,0 +1,60 @@
+<form [formGroup]="profileForm"  (ngSubmit)="onSubmit()" class="form">
+  <mat-form-field class="full-element">
+    <input id="login" type="text" formControlName="login" matInput placeholder="Login">
+    <mat-error *ngIf="getControl.login.touched && getControl.login.invalid">Please enter a valid login</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-element">
+    <input id="password" type="password" formControlName="password" matInput placeholder="Password">
+    <mat-error *ngIf="getControl.password.touched && getControl.password.invalid">Please enter a valid password</mat-error>
+    </mat-form-field>
+  <mat-form-field class="full-element">
+    <input id="first-name" type="text" formControlName="firstName" matInput placeholder="First Name">
+    <mat-error *ngIf="getControl.firstName.touched && getControl.firstName.invalid">Please enter a valid first name</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-element">
+    <input id="last-name" type="text" formControlName="lastName" matInput placeholder="Last Name">
+    <mat-error *ngIf="getControl.lastName.touched && getControl.lastName.invalid">Please enter a valid last name</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-element">
+    <input id="email" type="email" formControlName="email" placeholder="Email" matInput>
+    <mat-error *ngIf="getControl.email.touched && getControl.email.invalid">Please enter a valid email address</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-element">
+    <input id="phone-number" type="tel" formControlName="phoneNumber" placeholder="Phone Number" matInput>
+    <mat-error *ngIf="getControl.phoneNumber.touched && getControl.phoneNumber.invalid">Phone number is invalid.</mat-error>
+  </mat-form-field>
+  <div formGroupName="address">
+    <h2>Addresse</h2>
+    <mat-form-field class="full-element">
+      <input id="street" type="text" formControlName="street" placeholder="Location" matInput>
+      <mat-error *ngIf="getAddressControl.street.touched">Location is invalid.</mat-error>
+    </mat-form-field >
+    <mat-form-field class="full-element">
+      <input id="city" type="text" formControlName="city"  placeholder="City name" matInput>
+      <mat-error *ngIf="getAddressControl.city.touched">City is invalid.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-element">
+      <input id="state" type="text" formControlName="postalCode" placeholder="Postal code" matInput>
+      <mat-error *ngIf="getAddressControl.postalCode.touched">Postal code is invalid.</mat-error>
+    </mat-form-field >
+  </div>
+  <p>Form Status: {{ profileForm.status }}</p>
+  <p>Correct phone number format: {{phoneNumber.value | NationalPhoneNumber}}</p>
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+<!--
+Ressources :
+https://angular.io/guide/reactive-forms
+https://angular.io/api/forms/FormGroup
+https://www.tektutorialshub.com/angular/formgroup-in-angular/
+https://angular.io/api/forms/Validators
+https://angular.io/api/core/EventEmitter
+https://v7.material.angular.io/components/input/
+https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/
+https://www.concretepage.com/angular-2/angular-2-formgroup-example
+https://remotestack.io/angular-reactive-forms-validation-tutorial-example/
+https://stackoverflow.com/questions/67524949/error-ts2531-object-is-possibly-null-in-angular-reactive-forms/67530435#67530435
+-->
