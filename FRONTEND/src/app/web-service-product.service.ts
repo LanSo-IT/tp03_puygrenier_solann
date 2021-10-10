@@ -9,7 +9,7 @@ import { Product } from './product';
 export class WebServiceProductService {
 
   constructor(private http: HttpClient) { }
-
+  private cache!: Observable<Product[]>;
   public getProducts(): Observable<Product[]>
   {
     const url = 'http://localhost:3000/products';

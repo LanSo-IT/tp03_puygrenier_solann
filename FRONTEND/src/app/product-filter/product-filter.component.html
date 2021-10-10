@@ -1,0 +1,13 @@
+<p>product-filter works!</p>
+<mat-slider
+thumbLabel
+[displayWith]="formatLabel"
+tickInterval="1000"
+step="1"
+min="{{getMinimumPrice()}}"
+max="{{getMaximumPrice()}}"
+aria-label="units"
+#matslider></mat-slider>
+<div>
+      {{ matslider.value }}
+</div>

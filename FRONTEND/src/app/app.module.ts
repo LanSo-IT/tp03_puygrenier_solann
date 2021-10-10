@@ -13,12 +13,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider'
 // Angular form
 import { ReactiveFormsModule } from '@angular/forms';
 import { NationalPhoneNumberPipe } from './national-phone-number.pipe';
 // WebService
 import { HttpClientModule } from '@angular/common/http';
 import { ShowProductComponent } from './show-product/show-product.component';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { ShowProductComponent } from './show-product/show-product.component';
     RecapFormComponent,
     NationalPhoneNumberPipe,
     ShowProductComponent,
+    ProductFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { ShowProductComponent } from './show-product/show-product.component';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSliderModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

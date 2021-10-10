@@ -8,7 +8,7 @@ import { WebServiceProductService } from '../web-service-product.service';
 })
 export class ShowProductComponent implements OnInit {
   products = new Array<Product>();
-  constructor( productService:WebServiceProductService){;
+  constructor( productService:WebServiceProductService){
 
   productService.getProducts().subscribe(response =>
     {
@@ -26,4 +26,5 @@ export class ShowProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // TODO : FILTER TO REMOVE !
 }
