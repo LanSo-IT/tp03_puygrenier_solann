@@ -8,7 +8,9 @@ import { Product } from './product';
 })
 export class WebServiceProductService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getProducts()
+  }
   private cache!: Observable<Product[]>;
   public getProducts(): Observable<Product[]>
   {
